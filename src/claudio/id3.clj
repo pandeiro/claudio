@@ -48,8 +48,9 @@ Returns the updated tag map."
       (when-let [tag (.getTag audio-file)]
         (doseq [[k v] (partition 2 kvs)]
           (let [field-key (->constant (or (and (keyword? k) (constantify k)) k))]
-            (or (and v (.setField tag field-key v))
-                (.deleteField tag field-key))))
+            (if v
+              (.setField tag field-key v)
+              (.deleteField tag field-key))))
         (.commit audio-file)
         (read-tag f)))))
 
