@@ -6,7 +6,7 @@ Read and write textual data to/from MP3 ID3 tags with Clojure
 [JAudiotagger](http://www.jthink.net/jaudiotagger/index.jsp))
 
 ```clojure
-[claudio "0.1.1"]
+[claudio "0.1.2"]
 ```
 
 ## Usage
