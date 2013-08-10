@@ -1,4 +1,4 @@
-(defproject claudio "0.1.1"
+(defproject claudio "0.1.2"
   :description "A simple utility for reading and writing textual ID3 tag data"
   :url "https://github.com/pandeiro/claudio"
   :dependencies [[org.clojure/clojure "1.5.1"]
