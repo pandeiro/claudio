@@ -4,20 +4,20 @@
   (:import org.jaudiotagger.audio.AudioFileIO
            org.jaudiotagger.tag.FieldKey))
 
-(def field-keys
+(def ^{:private true} field-keys
   (let [constants (.getEnumConstants org.jaudiotagger.tag.FieldKey)]
     (map #(.name %) constants)))
 
-(defn ->constant [k]
+(defn- ->constant [k]
   (.get (.getField org.jaudiotagger.tag.FieldKey k) nil))
 
-(defn keywordify [k]
+(defn- keywordify [k]
   (keyword (string/replace (string/lower-case k) #"_" "-")))
 
-(defn constantify [k]
+(defn- constantify [k]
   (string/replace (string/upper-case (name k)) #"-" "_"))
 
-(defn retrieve-field [tag k]
+(defn- retrieve-field [tag k]
   (let [v (.getFirst tag (->constant k))]
     (when-not (empty? v)
       (vector (keywordify k) v))))
