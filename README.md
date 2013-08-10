@@ -14,6 +14,7 @@ Read and write textual data to/from MP3 ID3 tags with Clojure
 ### Setup
 
 ```clojure
+(require 'clojure.java.io)
 (require '[claudio.id3 :as id3])
 
 (def some-mp3 (clojure.java.io/file "/path/to/track.mp3"))
