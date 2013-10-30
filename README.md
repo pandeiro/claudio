@@ -38,6 +38,16 @@ strings or nil (in which case, the field key will be removed from ID3 tag).
                 :genre nil)
 ```
 
+### Silencing JAudiotagger's verbose debugging
+
+This will keep tag reading/writing from flooding your Emacs nREPL server
+buffer:
+
+```clojure
+(.setLevel (java.util.logging.Logger/getLogger "org.jaudiotagger")
+           java.util.logging.Level/OFF)
+```
+
 ## License
 
 Copyright © 2013 Murphy McMahon
