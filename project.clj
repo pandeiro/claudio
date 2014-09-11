@@ -1,4 +1,4 @@
-(defproject claudio "0.1.2"
+(defproject claudio "0.1.3"
   :description "A simple utility for reading and writing textual ID3 tag data"
   :url "https://github.com/pandeiro/claudio"
   :license {:name "Eclipse Public License"
