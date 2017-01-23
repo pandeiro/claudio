@@ -45,7 +45,7 @@ Returns the updated tag map."
     (when-not (even? (count kvs))
       (throw (Exception. "Tag-value pairs must an even number")))
     (let [audio-file (org.jaudiotagger.audio.AudioFileIO/read f)]
-      (when-let [tag (.getTag audio-file)]
+      (when-let [tag (.getTagOrCreateAndSetDefault audio-file)]
         (doseq [[k v] (partition 2 kvs)]
           (let [field-key (->constant (or (and (keyword? k) (constantify k)) k))]
             (if v
