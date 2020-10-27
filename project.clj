@@ -3,5 +3,7 @@
   :url "https://github.com/pandeiro/claudio"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org/jaudiotagger "2.0.3"]])
+  :repositories {"jaudiotagger-repository"
+                 {:url "https://dl.bintray.com/ijabz/maven"}}
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [net.jthink/jaudiotagger "2.2.5"]])
